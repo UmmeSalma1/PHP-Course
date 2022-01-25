@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Calibri Light";
+}
+h1,h2{
+    margin: 2rem;
+}
+#container{
+    width: 500px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+.form-el{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.form-elConfirm{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-el textarea {
+    resize: none;
+}
+
+.form-el input,select{
+    padding: 0.25rem;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.content{
+    margin: 0.5rem;
+    padding: 0;
+}
+
+.buttons{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    border-radius: .25rem;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center !important;
+}
+#submit:hover,#next:hover{
+    background-color:#88D6B5 ;
+}
+/*complementary calculated in https://www.canva.com/colors/color-wheel/*/
+#goBack:hover{
+    background-color:#D688A9;
+}
+#submit,#goBack{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
