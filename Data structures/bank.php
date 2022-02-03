@@ -16,6 +16,7 @@ public function __get($property)
       return $this->$property;
   }  
 }
+
 public function __set($property, $value)
 {
     if(property_exists($this,$value)){
@@ -27,7 +28,7 @@ public function __set($property, $value)
   if($this->balance<$rupees){
         return -1;
   }else{
-      echo $rupees ."debited Sucessfully<br> ";
+      echo $rupees ."debited Successfully<br> ";
       echo "Now Your Balance is $this->balance-$rupees";
   }
   $this->balance=$this->balance-$rupees;

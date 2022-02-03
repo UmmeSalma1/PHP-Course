@@ -13,57 +13,45 @@ class Nodes{
     }
     
 }
-// $newnode = new Nodes(5);
 class linklist{
-    public $head;
-
-    public function __construct(){
-        $this->head=null;
-    }
+    public $head=null;
 
     public function insertAtFirst($newItem){
         $newNode=new Nodes($newItem);
         if($this->head==null){
             $this->head=$newItem;
-            // $newItem=$this->head;
         }else{
             $newNode->next=$this->head;
             $this->head=$newNode;
         }
 
     }
-    public function printList()
+
+
+public function printList()
 {
-$items = [];
+// $items = [];
+$current=new Nodes(6);
 $current = $this->head;
-while ($current != null)
+while ($current!= null)
 {
-$items[]= $current->data;
+// $items[]= $current->data;
+echo $current->data;
 $current = $current->next;
 }
-
-    foreach ($items as $item) {
-        echo  $item . '->';
-    }
-    echo "<hr>";
+    
+// foreach ($items as $item) {
+//         echo  $item . '->';
+//     }
+    // echo "<hr>";
 }
 }
 $list=new linklist();
-$list->insertAtFirst("Khan");
+$list->insertAtFirst("Rifa");
 $list->printList();
-// echo "<br>";
-// $list->insertAtFirst("Salma");
-// $list->printList();
-// echo "<br>";
-// $list->insertAtFirst("Ulma");
-// $list->printList();
-// $list->insertAtFirst("Khan");
-// $list->printList();
-// echo "<br>";
-// $list->insertAtFirst("Salma");
-// $list->printList();
-// echo "<br>";
-// $list->insertAtFirst("Ulma");
-// $list->printList();
+echo "<br>";
+$list->insertAtFirst("Salma");
+$list->printList();
+echo "<br>";
 
 ?>
