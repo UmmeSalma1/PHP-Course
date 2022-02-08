@@ -736,7 +736,8 @@ function rand_Pass($upper = 1, $lower = 5, $numeric = 3, $other = 2) {
     } 
     for ($i = 0; $i < $numeric; $i++) { 
         $pass_order[] = chr(rand(48, 57)); 
-    } 27. Write a PHP script to sort an array in reverse order (highest to lowest).
+    } 
+27. Write a PHP script to sort an array in reverse order (highest to lowest).
     for ($i = 0; $i < $other; $i++) { 
         $pass_order[] = chr(rand(33, 47)); 
     } 

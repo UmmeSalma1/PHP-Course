@@ -202,7 +202,6 @@ class LinkList
         }
 
         echo $str;
-        echo '<hr>';
     }
     
     
@@ -233,6 +232,84 @@ $linklist->search(40);
 
 echo "<hr>"
 
+?>
+<h3> 7. WAP to reverse of a stack</h3>
+<?php
+// Reverse a number using stack
+
+// Stack Node
+class StackNode
+{
+public $data;
+public $next;
+public function __construct($data, $top)
+{
+$this->data = $data;
+$this->next = $top;
+}
+}
+class MyStack
+{
+public $top=NULL;
+public $count;
+// public function __construct()
+// {
+// $this->top = NULL;
+// $this->count = 0;
+// }
+// Returns the number of element in stack
+public function size()
+{
+return $this->count;
+}
+public function isEmpty()
+{
+if ($this->size() > 0)
+{
+return false;
+}
+else
+{
+return true;
+}
+}
+// Add a new element in stack
+public function push($data)
+{
+// Make a new stack node
+// And set as top
+$this->top = new StackNode($data, $this->top);
+// Increase node value
+$this->count++;
+}
+// Add a top element in stack
+public function pop()
+{
+$temp = 0;
+if ($this->isEmpty() == false)
+{
+// Get remove top value
+$temp = $this->top->data;
+$this->top = $this->top->next;
+// Reduce size
+$this->count--;
+}
+return $temp;
+}
+// Used to get top element of stack
+public function peek()
+{
+if (!$this->isEmpty())
+{
+return $this->top->data;
+}
+else
+{
+return 0;
+}
+}
+}
+echo "<hr>";
 ?>
 <h3>8.WAP to implement a circular queue.</h3>
 <?php 
@@ -332,11 +409,11 @@ $queue->dequeue();
 $queue->print();
 $queue->dequeue();
 $queue->print();
-$queue->enqueue("Rustam");
+$queue->enqueue("Umme");
 $queue->print();
-$queue->enqueue("Shohrab");
+$queue->enqueue("Salma");
 $queue->print();
-$queue->enqueue("Armaan");
+$queue->enqueue("Rifa");
 $queue->print();
 
 echo "<hr>";
@@ -552,32 +629,14 @@ echo "<hr>";
 ?>
 <h3>10.WAP to implement a priority queue.</h3>
 <?php
-/** 
- * 
- * 
- * @author Rustam
- * @link https://github.com/ShohrabRustam
- */
 class PnQueue
 {
-    
-    /**
-     * The array that will act as a queue 
-     * @var array
-     * 
-     */
-
     protected $queue = array();
 
-    
-    
-    /**
-     * Adds an item at the end of the queue or at the end of
-     * a given priority queue if $priority is set.
-     * @param mixed $item
-     * @param int $priority
-     * @throws Exception If $priority is not a numerical value
-     */
+    public function __constructor(){
+
+    }
+   
     public function push($item, $priority = 0)
     {
         if (!is_numeric($priority)) {
@@ -589,12 +648,7 @@ class PnQueue
         return $this;
     }
     
-    /**
-     * Returs the first element of the highest priority set, or
-     * the first element of a given priority queue if $priority is set.
-     * @param int $priority
-     * @return mixed|null
-     */
+   
     public function pop($priority = null)
     {
         // Get the first message from the first priority queue
@@ -619,11 +673,7 @@ class PnQueue
         return null;
     }
     
-    /**
-     * Purge the entire queue or only messages in a given
-     * priority queue if $priority is set.
-     * @param int $priority
-     */
+    
     public function purge($priority = null)
     {
         if (null === $priority) {
@@ -633,12 +683,7 @@ class PnQueue
         }
     }
     
-    /**
-     * Returns the number of items in all priority queues or in
-     * a single priority queue if $priority is set.
-     * @param int $priority
-     * @return int
-     */
+    
     public function count($priority = null)
     {
         switch ($priority) {
@@ -655,12 +700,7 @@ class PnQueue
         }
     }
     
-    /**
-     * Dump the content of the entire queue or a single priority
-     * queue if $priority is set.
-     * @param int $priority
-     * @return array|null
-     */
+    
     public function dump($priority = null)
     {
         if (null === $priority) {
@@ -672,3 +712,7 @@ class PnQueue
     }
 
 }
+$obj = new PnQueue();
+$obj->push(5);
+echo $obj->pop();
+?>
