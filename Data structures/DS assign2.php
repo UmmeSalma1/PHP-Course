@@ -88,7 +88,7 @@ isPalindrome($str,0,strlen($str));
 echo "<hr>";
 ?>
 
-<h3>4. Print all possible strings of length k that can be formed from a set of ncharacters</h3>
+<h3>4. Print all possible strings of length k that can be formed from a set of n characters</h3>
 <?php
 
 echo "<hr>";
@@ -96,5 +96,21 @@ echo "<hr>";
 
 <h3>5. Linear search using recursion</h3>
 <?php
+function linearSearch($arr,$arraySize,$keySearch){
+    if($arraySize==0){
+        echo "$keySearch Present";
+        return false;
+    }
+    else if($arr[$arraySize]==$keySearch){
+        echo "$keySearch at index : ". $arraySize+1;
+        return true;
+    }
+    else{
+        return linearSearch($arr,$arraySize-1,$keySearch);
+    }
+}
+$arr=Array(2,4,6,7,8,9,0,10);
+$key=6;
+linearSearch($arr,count($arr),$key)
 
 ?>
